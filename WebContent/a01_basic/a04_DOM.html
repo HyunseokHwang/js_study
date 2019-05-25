@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//window객체 BOM객체가 로딩된 후에 실행할 내용을 함수로 구현
+//BOM 상위 ==> DOM가 당연히 메모리에 로딩된다.
+window.onload=function(){
+	//특정 객체를 로딩 처리 
+	//document.querySelector("단일 객체") : 여러 개 있어도 첫번째 하나만 객체로 인식
+	//document.querySelectorAll("배열 객체") : 하나만 있어도 배열안에 하나의 객체가 있는 구조
+	var firstH1 = document.querySelector("h1"); //첫번째 h1이 메모리에 로딩된다.
+	// 속성값을 변경
+	firstH1.align="center";
+};
+
+function call(){
+	alert("함수 호출");
+	var cls01 = document.querySelectorAll(".cls01");
+	cls01[0].align="center";
+	cls01[1].align="center";
+	// 객체.innerHTML : 해당 내용의 textNode를 아래처럼 변경 처리해준다.
+	cls01[0].innerHTML = "cls01클래스";
+	cls01[1].innerHTML = "cls01클래스";
+}
+</script>
+</head>
+<body>
+<h1>안녕하세요</h1>
+<!-- 태그명 onClick="함수()" inline형식 이벤트 처리 -->
+<h1 class="cls01" onClick="call()">안녕하세요(클릭시, 클래스들 중앙정렬)</h1>
+<h2>안녕하세요</h2>
+<h2 class="cls01">안녕하세요</h2>
+<h3 id="id01">안녕하세요</h3>
+<h3>안녕하세요</h3>
+</body>
+</html>

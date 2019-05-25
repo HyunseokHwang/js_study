@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+# 조건문
+1. 비교연산자(==, !=, >=, >, <)에서 나온 논리값(true/false)로
+처리할 프로세스를 분기로 나누어 주는 형식을 말한다.
+2. 기본형식
+1)if( boolean값 ){
+	boolean값이 true일 때 처리할 내용..
+}
+2)
+if( boolean ){
+	true일 때 처리할 내용
+}
+else {
+	false일 때 처리할 내용
+}
+*/
+var id = "himan";
+document.write("회원 여부 확인<br>");
+if( id == "himan" ){
+	//id값이 himan일 때 처리할 내용..
+	document.write("등록된 회원입니다.<br>");
+}
+document.write("확인 끝<br>");
+
+var inputPt = 80;
+document.write("합격여부확인<br>");
+if( inputPt >= 60 ){
+	//true일 때 처리할 내용
+	document.write("합격입니다.<br>");
+}
+else {
+	//false일 때 처리할 내용
+	document.write("불합격입니다.");
+}
+document.write("합격여부확인끝<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

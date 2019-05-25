@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// a03_loop.html 
+// # 반복문..
+// for(초기값;반복조건;증감연산자){
+//   반복할 내용..	
+//}               11<=10 :일때, 반복 block{}을 수행하지 못한다.
+	for(var cnt=1;cnt<=10;cnt++){
+		// for{}안에서  10회 반복처리..
+		document.write("<h3>"+cnt+") 안녕하세요!!</h3>");
+	}
+// 반대로  초기값이 10  cnt=10,  반복조건 cnt>=0  증감 cnt--
+//      카운트 다운 10
+//      카운트 다운 9
+//      카운트 다운 8...
+//      카운트 다운 0...
+	for(var cnt=10;cnt>=0;cnt--){
+		document.write("<h2>카운트 다운 "+cnt+"</h2>");
+	}
+// 배열과 for과의 관계..
+// 배열의 선언과 할당..
+// var 배열명 = [데이터1,데이터2,데이터3];
+	var fruits = ["사과","바나나","딸기"];
+// 배열명[index값] : 해당 데이터를 호출, 변경 가능하다.	
+	document.write("<h2>첫번째 fruits:"+fruits[0]+"<h2>");
+	fruits[1]="오렌지";
+	document.write("<h2> fruits:"+fruits+"<h2>");
+// 배열명.length : 배열의 크기	
+	document.write("<h2> fruits.length:"+fruits.length+"<h2>");
+// 배열은 index에 의해 추가	
+	fruits[3]="수박"; // 추가 배열 선언..
+// 배열 push("추가데이터")
+	fruits.push("망고");
+	// 반복문을 이용해서 처리..
+	//     배열 index의 초기 설정   index번호가 배열의 크기보다 1개 작음.  index의 증가
+	// for(var idx=0;         idx < 배열명.length            ;  idx++    )
+	document.write("<h2> fruits.length:"+fruits.length+"<h2>");
+	for(var idx = 0; idx < fruits.length; idx++){
+		document.write("<h3>fruit["+idx+"]:"+fruits[idx]+"</h3>");
+	}
+// ex) 물건의 가격, 3000, 5000, 7000, 8000, 2000 을 배열로 만들고, 
+//     @@ 번째 물건의 가격은 @@@원 입니다.
+ 	var prices = [3000,5000,7000,8000,2000];
+ 	
+ 	for(var i = 0; i<prices.length; i++){
+ 		document.write("<h3>"+(i+1)+"번째 물건의 가격은"+prices[i]+"입니다.</h3>")
+ 	}
+ 	
+/* 	for(var idx=0;idx<prices.length;idx++){
+		document.write("<h3>"+(idx+1)+"번째 물건의 가격은 "
+				+prices[idx]+"원입니다.</h3>")
+		
+	}  */
+	
+// ※ 객체 배열..
+ var empList = [
+	 {empno:7770, ename:"홍길동", job:"사원"},
+	 {empno:7771, ename:"신길동", job:"대리"},
+	 {empno:7772, ename:"마길동", job:"과장"}
+ ];
+	
+	for(var i=0; i<empList.length; i++){
+		var emp = empList[i];
+		document.write("<h3>" +emp.empno+ ", " +emp.ename+ ", "
+				+emp.job+"</h3>");
+	}
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
