@@ -69,7 +69,20 @@
 				+emp.job+"</h3>");
 	}
 
-	
+var product = [
+	{no:1, name:"이야기인문학", genre:"인문"},
+	{no:2, name:"일취월장", genre:"자기계발"},
+	{no:3, name:"이코", genre:"소설"}
+];
+
+    for(var i=0; i<product.length; i++){
+    	var product_show = product[i];
+    	document.write("<h3>"
+    			+product_show.no+". "
+    			+product_show.name+", "
+    			+product_show.genre+
+    			"</h3>");
+    }
 </script>
 </head>
 <body>
