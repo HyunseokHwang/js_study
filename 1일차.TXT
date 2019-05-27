@@ -1,0 +1,74 @@
+자스 제이쿼리 1일차
+1. 자바 버전 확인
+java -version
+
+2. eclipse설치
+3. eclipse 실행
+4. dynamic web project생성 
+5. window - preferences - general - workspace
+utf-8 encoding 방식 변경
+6. web - css files , html, jsp 
+encoding utf8로 변경 apply
+7. general - webbrowser - use external webbrowser
+chrome설정
+
+8. WebContent 하위에서 개발 시작
+9. index.html 생성
+10. 하단 server 버튼
+11. 톰캣 8.0
+12. download and install
+13. workspace 상위 폴더 tomcat폴더 생성
+14. add, finish
+15. module tomcat double click
+16. port 변경
+
+server
+아래 3가지는 반드시 알아놓을 것
+commit 내 소스를 올림
+replace latest version 내 소스 지우고 서버 최신 버전받음
+clean up 
+
+17. help - eclipse marketplace
+svn 검색(형상관리관련 툴)
+subclipse 설치
+18. window - show view - other - svn - svn repositories
+
+19. 우측마우스 클릭 new - repositories location
+아래 입력
+//https://192.168.0.163/svn.jsprj/trunk
+//perment
+//future/7777
+
+이후 refresh
+
+project menu - import - 
+기본 폴더명에 _svn 추가
+
+svn team - update to head
+
+자스
+변수형 함수
+var fun01 = function(){};
+선언형 함수
+function call(){};
+생성자 객체
+function Person(){
+  this.name="홍길동";
+  }
+  
+
+변수형(메모리)
+함수형(메모리 + 반복문)
+객체형(여러개 변수 + 여러개 함수)
+배열json javascript objected notation 형식
+{속성: 속성값,}
+속성 = 속성값, 속성 = function(){};
+
+String(문자열)
+
+jquery 사이트
+uncompressed클릭, 주소복사
+우측마우스 클릭 다른 이름으로 저장
+
+jquery ui
+full calendar
