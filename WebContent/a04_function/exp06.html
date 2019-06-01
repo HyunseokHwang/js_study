@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	document.body.innerHTML="<h1>시작</h1>";
+	var grade = prompt("단수를 입력하세요.");
+	var cnt = 1;
+	var int01 = setInterval(function(){
+		document.write("<h1>"+grade+ " X "+cnt+ "= "+(grade * cnt)+"</h1>");
+		cnt++;
+		if(cnt==10){
+			//반복수행 중단 처리 clearInterval(반복수행변수);
+			clearInterval(int01);
+			alert("반복중단");
+		}
+	}, 1000);
+};
+</script>
+</head>
+<body>
+
+</body>
+</html>

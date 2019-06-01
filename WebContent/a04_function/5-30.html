@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 1초마다 함수를 실행합니다.
+        // setInterval(반복수행할함수, 1/1000반복시간단위)
+        
+        
+        var intervalID = setInterval(function () {
+            document.write('<p>' + new Date() + '</p>');
+        }, 1000);
+        // 10초 후 함수를 실행합니다.
+        setTimeout(function () {
+            // 타이머를 종료합니다.
+            clearInterval(intervalID);
+        }, 10000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script>
+        // 변수를 선언합니다.
+        var person = {
+            name: '홍길동',
+            eat: function (food) { 
+            	// this. :이 객체가 가지고 있는 속성이나, 메서드를 접근.
+            	alert(this.name+" "+food+"를 먹는다!");
+            	
+            }
+        };
+        // 메서드를 호출합니다.
+        // 객체의 메서드를 사용하는 것은.
+        // 객체명.메서드명(입력..)
+        person.eat("사과");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

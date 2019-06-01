@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script>
+        // 변수를 선언합니다.
+        //var input = prompt('숫자를 입력해주세요.', '');
+        //var number = Number(input);
+        // 조건문
+        //(number > 0) ? alert('자연수입니다.') : alert('자연수가 아닙니다.');
+        // 삼항 연산자
+        // 1항?2항:3항;
+        // 1항 : 조건문
+        // 2항 : 조건문이 true일때,처리할 내용
+        // 3항 : 조건문이 false일때, 처리할 내용..
+        //var isMale = confirm("남자이면 확인, 여자이면 취소를 클릭하세요!");
+        //alert("입력한 값:"+isMale);
+        //document.write("<h2>어서오세요! "+((isMale)?'신사':'숙녀')+"분 입장입니다.</h2>");
+        document.write("<h2>어서오세요! "
+        		+((confirm("남자이면 확인, 여자이면 취소를 클릭하세요!"))?'신사':'숙녀')+"분 입장입니다.</h2>");
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

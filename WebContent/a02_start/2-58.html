@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script>
+        {
+            // 스코프 A
+            // es6 let변수는 전역/지역변수를 명확하게 구분하여 처리한다.
+            let variable = 273;
+        }
+        {
+        // 스코프 B
+        alert(variable);
+        }
+        // 전역 스코프
+        alert(variable);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

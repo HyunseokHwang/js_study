@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script>
+        // 변수를 선언합니다.
+        var array = ['포도', '사과', '바나나', '망고'];
+        // for in 반복문
+        // for(var key in 배열){
+        //    key==> index
+        //    배열[key] ==> 해당 배열의 index에 있는 값..
+        //}
+        for (var i in array) {
+            document.write(array[i]+"<br>");
+        }
+        var names = ["홍길동","신길동","마길동"];
+        for(var key in names){
+        	document.write(key+":"+names[key]+"<br>");
+        }
+        var p01 = {name:"홍길동", age:25,loc:"서울 신림"};
+        for(var key in p01){
+        	document.write(key+":"+p01[key]+"<br>");
+        }
+        //ex1) 배열로  과목을 선언  국어 영어 수학   for in 구문으로 출력.
+        var subjects = ["국어","영어","수학"];
+        for(var idx in subjects){
+        	document.write(idx+":"+subjects[idx]+"<br>");
+        }
+        //ex2) 객체로  name:"홍길동", kor:70, eng:80, math:90 for in 구문으로 출력
+        var studs = {name:"홍길동", kor:70, eng:80, math:90};
+        for(var pro in studs){
+        	document.write(pro+":"+studs[pro]+"<br>");
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

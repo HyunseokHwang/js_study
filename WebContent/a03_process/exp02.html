@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// ex) 월을 입력받아서 1~12 해당하는 월의 마지막날짜를 출력 아래
+	//     형식으로 출력 처리하세요.
+	//     @@월 @@일까지 입니다.switch case문 활용
+	//     마지막 default는 월은 1~12월까지 숫자로 입력이 가능합니다.
+	var month = Number(prompt("월을 입력하세요"));
+	switch(month){
+		case 2:
+			document.write("<h2>2월은 28일까지 입니다!");
+			break; // break를 만나는 순간 switch문의 {}블럭을  벗어난다.
+		case 1:	// case문에서 break가 없으면 계속 프로세스가 진행한다.
+		case 3:	
+		case 5:	
+		case 7:	
+		case 8:	
+		case 10:	
+		case 12:
+			document.write("<h2>"+month+"월은 31일까지 입니다!");
+			break;
+		case 4:		
+		case 6:		
+		case 9:		
+		case 11:
+			document.write("<h2>"+month+"월은 30일까지 입니다!");
+			break;			
+		default: // 숫자형으로 입력하지 않는 경우나 , 1~12이외의 숫자일때..
+			document.write("<h2>월은 1~12월까지 숫자로 입력이 가능합니다.</h2>");
+	}
+	document.write("<h2>프로그램 종료</h2>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

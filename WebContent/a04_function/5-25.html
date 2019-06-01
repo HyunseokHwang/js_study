@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 함수를 생성합니다.
+        function returnFunction() {
+            return function () {
+                alert('Hello Function .. !');
+            };
+        }
+        // 함수를 호출합니다.
+        // 함수안에 있는 함수 내용을 수행할려면()을 처리하여한다.
+        alert( returnFunction() ); 
+        returnFunction()();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.body.innerHTML="<h1>시작!!</h1>";
+
+		// json형 객체배열 선언..
+		// ctrl+alt+화살표아래
+		var emplist =[
+			{empno:7001,ename:"홍길동",job:"사원",sal:3000,deptno:70},
+			{empno:7002,ename:"신길동",job:"대리",sal:4000,deptno:20},
+			{empno:7003,ename:"마길동",job:"과장",sal:5000,deptno:10}
+		];
+		emplist.push({empno:7004,ename:"오길동",job:"차장",sal:3000,deptno:70});
+		var show="";
+		show+="<table border>";		
+		show+="<tr><th>사원번호</th><th>이름</th><th>직급</th></tr>";		
+		for(var idx=0;idx<emplist.length;idx++){
+			var emp = emplist[idx];
+			show+="<tr><td>"+emp.empno+"</td><td>"+emp.ename
+					+"</td><td>"+emp.job+"</td></tr>";	
+		}
+		show+="</table>";	
+		document.body.innerHTML+=show;
+		
+		document.body.innerHTML+="<h2>for in 구문</h2>";
+		show="<table border>";		
+		show+="<tr>";
+		for(var pro in emplist[0]){
+			show+="<th>"+pro+"</th>";
+		}
+		show+="</tr>";	
+		for(var idx in emplist){
+			var emp = emplist[idx];
+			show+="<tr>";
+			for(var pro in emp){
+				show+="<td>"+emp[pro]+"</td>";
+			}
+			show+="</tr>";
+		}
+		show+="</table>";
+		document.body.innerHTML+=show;
+		
+		
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>
