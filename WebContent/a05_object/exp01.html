@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.body.innerHTML="<h1>시작!!</h1>";		
+/* 		
+1. 생성자형 객체
+	Student :  name, kor, eng, math
+	
+2. Book  도서명, 가격, 출판사
+   함수 show  h2로 해당 속성들 출력처리..
+   
+3. var blist = [];
+   blist.push(new Book("java기초",30000,'자바나라'));
+   3개 도서를 할당하여 출력처리..
+ */
+		function Book(name, price, publisher){
+	   		this.name = name;
+	   		this.price = price;
+	   		this.pusblisher = publisher;
+	   		this.prn=function(){
+	   			document.write("<h2>"+this.name+":"+this.price+":"+this.pusblisher+"</h2>");
+	   		};
+   		}
+   		var b1 = new Book("javascript jquery기초",30000,"frontend 나라");
+   		b1.prn();
+   		var blist=[];
+   		blist.push(new Book("java기초",30000,'자바나라'));
+   		blist.push(b1);
+   		blist.push(new Book("node.js로 가는길",32000,"아이티나라"));
+   		document.write("<h2>현재 배열 객체의 갯수:"+blist.length+"</h2>");
+   		for(var idx=0;idx<blist.length;idx++){
+   			var book = blist[idx];
+   			book.prn();
+   		}
+   		
+   		
+   		
+   		
+ 
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

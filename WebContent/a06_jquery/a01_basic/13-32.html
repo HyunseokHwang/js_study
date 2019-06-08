@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .high-light {
+            background: yellow;
+        }
+        .blueWorld{
+        	color:blue;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+        	// $(객체).addClass("css로 정의된 클래스를 적용");
+            $('h1').addClass('high-light');
+            $('h1').addClass('blueWorld');
+        });
+    </script>
+</head>
+<body>
+    <h1>item - 0</h1>
+    <h1>item - 1</h1>
+    <h1>item - 2</h1>
+    <h1>item - 3</h1>
+    <h1>item - 4</h1>
+</body>
+</html>

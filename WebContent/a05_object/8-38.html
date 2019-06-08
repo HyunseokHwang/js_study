@@ -4,7 +4,11 @@
     <script>
         // 변수를 선언합니다.
         var date = new Date();
-        // 현재 시각에서 7일을 더합니다.    
+        // 현재 시각에서 7일을 더합니다. 
+        // getXXX(), setXXX()를 통해서 해당 정보를 저장/호출..
+        // FullYear, Month, Date, Day(요일0~6), Hours, Minutes,
+        // Seconds, Milliseconds
+        // ex) setMonth(0) :1월로 해당내용 저장..
         date.setDate(date.getDate() + 7);
         // 출력합니다.
         alert(date);

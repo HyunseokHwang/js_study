@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var num01 = 50;
+	var num02 = 30.7;
+	document.write("num02 : " + num02 + "<br />");
+	document.write("typeof (num02) : " + typeof(num02) + "<br /><br />");
+	
+	var point = 80;
+	var isPass = point >= 60;
+	var isA = true;
+	document.write("isPass : " + isPass + "<br>");
+	document.write("isA:"+ isA + "<br>");
+	document.write("typeof(isPass):" + typeof(isPass) + "<br><br>");
+	
+	var plus = function(num01, num02){
+		var sum = num01 + num02;
+		return sum;
+	}
+	document.write(plus(10,20) + "<br>");
+	document.write("typeof : " + typeof(plus) + "<br>");
+	
+	function call(){
+		var open = document.querySelectorAll(".open");
+		open.display = "block";
+	}
+	
+
+</script>
+<style type="text/css">
+	a {padding:5px 20px; color:#fff; font-size:11px; background:deeppink; text-decoration:none;}
+	.open {background:#eee; padding:10px; width:200px;}
+	.st01 {font-size:11px;}	
+	.st02 {font-size:16px; font-weight:bold;}	
+</style>
+</head>
+<body>
+	<a href="#" onclick="call()">신용카드결제</a>
+	<div class="open">
+		<p class="st01">30,000원 이상 결제시</p>
+		<p class="st02">2,000원 할인</p>
+	</div>
+
+</body>
+</html>

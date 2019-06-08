@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var array = [
+                { name: 'Hanbit Media', link: 'http://hanbit.co.kr' },
+                { name: 'Naver', link: 'http://naver.com' },
+                { name: 'Daum', link: 'http://daum.net' }
+            ];
+            // $.each() 메서드를 사용합니다.
+            //  $.each(배열객체,function(index, 단위객체){})
+            $.each(array, function (index, item) {
+            	//alert(index+":"+item.name);
+            	$("h1").eq(index).html(item.name);
+            });
+            $.each(array, function (index, item) {
+            	//alert(index+":"+item.name);
+            	$("h1").eq(index).html(item.name);
+            });
+            $.each(array, function (index, item) {
+            	var html="<td>"+(index+1)+"</td>";
+            	html+="<td>"+item.name+"</td>";	
+            	html+="<td>"+item.link+"</td>";	
+            	alert(html); // data를 만든 html코드를 tr의 두번째부터 입력 처리.
+            	// 
+            	$("tr").eq(index+1).html(html);
+            });           
+        });
+        // ex) table에 name과 link가.. $.each를 이용해서  아래와 같이 처리되게 하세요.
+        //    $("tr")   <td>번호(index?)</td><td>item.name</td><td>item.link</td
+        //     .html()
+        //      1   Hanbit Media   http://hanbit.co.kr 
+        //      2   Naver           http://naver.com
+        //      3   Daum           http://daum.net
+    </script>
+</head>
+<body>
+	<h1></h1>
+	<h1></h1>
+	<h1></h1>
+	<table border>
+		<tr><th>번호</th><th>사이트명</th><th>주소</th></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</table>
+</body>
+</html>

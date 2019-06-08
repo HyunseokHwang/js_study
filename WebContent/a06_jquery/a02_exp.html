@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("h1").html("안녕하세요!! jquery 시작");
+// javascript 선택자 처리..
+// 1. document.getElementsByTagName("태그명")
+		var h2 = document.getElementsByTagName("h2");
+		// getElementsByTagName : 배열로 인식하기 때문에. 배열로 label내용을 할당한다.
+		h2[0].innerHTML="안녕하세요!!getElementsByTagName";
+// 2. document.getElementsByClassName("클래스명") : 클래스명으로 배열객체 호출..
+		var cls01 = document.getElementsByClassName("cls01");
+		cls01[0].innerHTML="변경 class이름으로 접근getElementsByClassName";
+		cls01[1].innerHTML="변경 class이름으로 접근getElementsByClassName";
+// 3. document.getElementById("아이디명")
+		var id01 = document.getElementById("id01"); // 하나의 객체로 접근
+		id01.innerHTML = "아이디로 접근!!getElementById";
+		var name01 = document.getElementsByName("name01");
+		name01[0].value="홍길동";
+		name01[1].value="김길동";
+		name01[2].value="신길동";
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<h2></h2>
+	<h3 class="cls01">안녕1</h3>
+	<h4 id="id01">안녕2</h4>
+	<h4 class="cls01">안녕3</h4>
+	<h4>안녕4</h4>
+	<input name="name01" />
+	<input name="name01" />
+	<input name="name01" />
+	
+</body>	
+</html>

@@ -11,6 +11,7 @@
             this.getWidth = function () { return width; };
             this.getHeight = function () { return height; };
             this.setWidth = function (w) {
+            	// 메서드를 통해서 음수가 입력되지 못하게 처리..
                 if (w < 0) {
                     throw '길이는 음수일 수 없습니다.';
                 } else {

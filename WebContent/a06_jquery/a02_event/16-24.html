@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 5px; padding: 5px;
+            border: 3px solid black;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a').click(function (event) {
+                $(this).css('background-color', 'blue');
+                event.stopPropagation(); // 이 태그를 포함하는 상위 객체에 이벤트 전달 방지
+                event.preventDefault(); // 이 태그가 가지고 있는 고유의 event속성인 이동처리를 방지 처리
+            });
+
+            $('h1').click(function () {
+                $(this).css('background-color', 'red');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        <a href="http://hanb.co.kr">Hanb Media</a>
+    </h1>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("h1").html("로그인");
+	});
+	function login(){
+		//alert("로그인?");
+		// 객체[속성=속성값]을 이용해서 .val()  입력한 id, password가 himan//7777
+		// h2에 인증 성공/ 인증 실패 출력..
+		var idVal = $("input[name=id]").val();
+		var passVal = document.querySelector("input[name=pass]").value;
+		//alert(idVal+":"+passVal);
+		if(idVal=='himan' && passVal == '7777'){
+			$("h2").html(idVal+"님 인증 성공");
+		}else{
+			$("h2").html(idVal+"님 인증 실패");
+		}
+	}
+</script>
+</head>
+<body>
+	<h1></h1>
+	아이디<input type="text" name="id"/><br>
+	패스워드<input type="password" name="pass"/><br>
+	<input type="button" value="로그인" onclick="login()"/>
+	<h2></h2>
+</body>	
+</html>

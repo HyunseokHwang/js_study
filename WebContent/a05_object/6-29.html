@@ -4,12 +4,17 @@
     <script>
         // 변수를 선언합니다.
         var originalValue = 10;
+        // newValue에 데이터 할당.
+        // newValue:10, originalValue:10
         var newValue = originalValue;
         // 원본 값을 변경합니다.
         originalValue = 273;
+        // newValue:10, originalValue:273
+        // 개별적으로 데이터 할당 처리..
         // 출력합니다.
-        alert(originalValue);
-        alert(newValue);
+        document.write("<h2>originalValue:"+originalValue+":newValue:"+newValue+"</h2>")
+
+        
     </script>
 </head>
 <body>

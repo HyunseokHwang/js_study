@@ -4,94 +4,131 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-/* 
- 여러줄 주석
- # 자바스크립트에서의 데이터 유형
- 1. 선언 형식..
- 1) var 변수명 = 할당할 데이터;
- 자바스크립트에서는 데이터를 할당하는 순간 데이터 유형이 결정된다.
 
- 2. 타입
- 1) number 숫자형 데이터(실수, 정수 크기 상관없이 할당할 수 있다.) - number
- 2) boolean(비교연산자에 의해 true/false)
- 3) function(함수형) var f1 = function(){};
- 4) object(객체형) function Person(){ this.name= "홍길동" }
-                 var per1 = new Person();
-                 var p1 = {name:"사과"};
-                 var array=["사과","바나나"]; 
-                                      ※  var objArray = [{name:"사과"},{name:"바나나"}];
- 5) string(문자열형) var name = "홍길동"; var product='사과';
- */
- //대부분의 스크립트 언어에서는 ; 생략하더라도 에러가 발생하지 않는다.
- var num01 = 25;
- num01 = 70.5;
- num01 = "안녕하세요";
- var num02 = 30;
- document.write("num02 : "+num02+"<br>"); //DOM에서 화면 출력하는 기본 메소드..
- document.write("typeof(num02) : "+typeof(num02) + "<br>"); //typeof() 함수를 통해서 data 유형 확인
- 
- var num03 = 30.7;
- document.write("num03 : "+ num03 +"<br>"); //DOM에서 화면 출력하는 기본 메소드..
- document.write("typeof(num03) : "+typeof(num03) + "<br>"); //typeof() 함수를 통해서 data 유형 확인
- 
- var point = 80;
- var isPass = point>= 60;
- var isA = true;
- 
- document.write("isPass : "+ isPass +"<br>");
- document.write("isA : "+ isA +"<br>");
- document.write("typeof(isPass) : " + typeof(isPass) + "<br>");
- //F12 단축 : 개발자 도구(에러 로그 확인)
- 
-var plus = function(num01, num02){
-	 var sum = num01 + num02;
-	 return sum;  //함수가 호출된 곳에 sum을 전달..
- }; //plus라는 변수형 함수는 입력값은 2개, return값은 1개로 선언(합산결과)
- document.write("<h2>함수 호출:" + plus(25,30) + "</h2>");
- document.write("<h2>데이터 유형:" + typeof(plus) + "</h2>");
- 
- // 객체 : 필드(전역변수/상수) + 메서드
- // 1) 생성자 유형 객체..
- function Person(name, age){
-	 this.name=name; //필드
-	 this.age=age;  //필드
-	 this.show=function(){ //메서드
-		 document.write("<h3>이름:"+this.name+"</h3>");
-		 document.write("<h3>나이:"+this.age+"</h3>");
-	 }
- }
- var p1 = new Person("홍길동", 25);
- var p2 = new Person("신길동", 27);
- 
- p1.show();
- p2.show();
- document.write("<h3>p1의 데이터 유형 : "+typeof(p1)+"</h3>");
- document.write("<h3>p2의 데이터 유형 : "+typeof(p2)+"</h3>");
- 
- //2) json 객체
-var obj1 = {}; //- 객체가 heap영역에 할당..
-obj1.name = "홍길동";
+    /*
+    * 타입들
+   - 숫자형 (실수/정수 크기 상관없이 할당할수있음) : number
+   - boolean (참, 거짓)  : typeof는 데이터유형 알아볼때
+   - function(함수형) 
+   - object (객체)   
+			function Person(){this.name="홍길동"}
+			var per1 = new Person();
+      		var p1 = {name:"사과"};   //객체
+     		var array = ['사과', '바나나'];  //배열
+      		var obArray=[{name:'사과'}, {name:'바나나'}];  //객체형배열
+    -string(문자열형) var name="홍길동"; var product='사과';
+    
+    */
 
-var obj2 = {name:"홍길동", age:25, show: function(){
-document.write("<h3>"+this.name+"</h3>");
-document.write("<h3>"+this.age+"</h3>");
-}};
-obj2.show();
-document.write("<h3>obj2의 데이터 유형 : "+typeof(obj2)+"</h3>");
+	var num01 = 25;
+	num01 = 70.5; 
+	num01 = "안녕하세요";
+	
+	var num02 = 30;
+	document.write("num02:" + num02 + "<br>"); // DOM에서 화면에 출력하는 기본 메서드;
+	document.write("typeof(num02):" + typeof(num02) + "<br>"); // typeof()함수를 통해서 데이터유형을 확인할수 있다;
+	
+	var num03 = 30.7;
+	document.write("num03:" + num03 + "<br>");
+	document.write("typeof(num03):" + typeof(num03) + "<br>"); 
+	
+	var point = 80;
+	var isPass = point>=60;
+	var isA = true;
+	document.write("isPass:" + isPass + "<br>");
+	document.write("isA:" + isA + "<br>");
+	document.write("typeof(isPass):" + typeof(isPass) + "<br>"); //브라우저에서  : f12 개발자도구 확인
+	
+	var plus = function(num01, num02){
+		var sum = num01 + num02;
+		return sum;
+	}
+	document.write("<h2>함수호출:" + plus(25,30) + "</h2>");
+	document.write("<h2>데이터유형:" + typeof(plus) + "</h2>");
+	
+	function Person(name, age){
+		this.name=name; // 필드
+		this.age=age;
+		this.show=function(){//메서드
+			document.write("<h3>이름:"+this.name+"</h3>");
+			document.write("<h3>나이:"+this.age+"</h3>");
+		}
+	}
+	var p1 = new Person("홍길동",25);
+	var p2 = new Person("신길동",27);
+	p1.show();
+	p2.show();
+	document.write("<h3>p1의 데이터 유형:"+typeof(p1)+"</h3>");
+	document.write("<h3>p2의 데이터 유형:"+typeof(p2)+"</h3>");
+	
+	
+	//json객체
+	var ob1 = {}; //- 객체가 heap영역에 할당..
+	ob1.name= "홍길동";
+	var ob2 = {name:"홍길동",age:25, show:function(){
+		document.write("<h3>json:"+this.name+"</h3>");	
+		document.write("<h3>json:"+this.age+"</h3>");	
+	}};
+	ob2.show();
+	document.write("<h3>ob2의 데이터 유형:"+typeof(ob2)+"</h3>");
+		
+	//문자열
+	var name = "홍길동";
+	document.write("<h2>이름은 "+name+"입니다</h2>");
+	document.write("<h2>name의 데이터유형 "+typeof(name)+"입니다</h2>");
+	// 배열은 []로 생성을 하는데, 데이터유형은 object에 포함된다.
+	var list = [3000,4000,5000]; // 배열은 변수명[index0~]
+	document.write("<h2>"+list+"</h2>");
+	document.write("<h2>tyeof(list):"+typeof(list)+"</h2>");
+	
+	//조건문
+	
+	//반복문
+	
+	//for
+	
+	for (var cnt=10; cnt>=0; cnt-- ){
+			document.write("카운트다운" + cnt + "<br>");
+	}
+	
+	//배열과 for문과의 관계
+	
+	var fruits = ['바나나', '딸기', '수박'];
+	document.write(fruits[0]);
+	fruits[1] = '오렌지';
+	document.write(fruits + "<br>");
+	
+	var price = [3000, 5000, 7000, 8000, 2000];
+	
+	for (var idx=0; idx<price.length; idx++){
+		document.write((idx+1) + "번째 가격은 : " + price[idx] +"<br>");
+	}
+	
+	//객체배열
+	
+	window.onLoad = fuction(){
+		
+	};
+	
+	
+	
+	
 
-//문자열 데이터 : 자바스크립트는 문자형 데이터가 없다. 문자열만 사용하고 있다.
-//'',"" 둘 다 문자열을 할당하는데 사용되고 있다.
-var name = "홍길동";
-document.write("<h2>이름은 "+name+"입니다.</h2>");
-document.write("<h2>name의 데이터유형은 "+typeof(name)+"입니다.</h2>");
-
-//배열은 []로 생성을 하는데, 데이터 유형은 object에 포함된다.
-var list = [3000, 4000, 5000]; //배열은 변수명[index0~]
-document.write("<h2>"+list+"</h2>");
-document.write("<h2> typeof(list):"+typeof(list)+"</h2>");
 </script>
 </head>
 <body>
+	<h1></h1>
+	<h1></h1>
+	<h2></h2>
+	<h2></h2>
+
+
+
+
+
+
+
+
 
 </body>
 </html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            $('h1').click(function () {
+                $(this).html(function (index, html) {
+                    return html + '★';
+                });
+            });
+			// 강제 이벤트 처리.
+			// 1. 특정한 객체에 이벤트 선언..
+			// 2. 로직상, 이벤트가 있는 객체.. ..trigger("이벤트")
+			//    - 상단에 이벤트가 선언된 객체만이 로직(조건,반복문, 함수,..)
+			//    - 클릭과 동일한 효과 처리.
+            // 1초마다 함수를 실행합니다.
+            setInterval(function () {
+                $('h1').last().trigger('click');
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <h1>Start: </h1>
+    <h1>Start: </h1>
+</body>
+</html>

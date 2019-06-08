@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+        	// $(tag명[속성명=속성값]).val("값을 지정처리..")
+            $('input[type="text"]').val('Hello jQuery..!');
+        });
+        function call(){
+        	var btn = document.querySelector("input[type=button]");
+        	btn.value="클릭되었습니다.";
+        	btn.style.backgroundColor="yellow";
+        	// $([속성=속성값])
+        	$("[name=pass01]").css("background-color","green");
+        	$("[name=pass01]").val("7777");
+        }
+        // ex) 
+    </script>
+</head>
+<body>
+	<input type="button" value="클릭하세요" onclick="call()"/>
+    <input type="text" />
+    <input type="password" name="pass01"/>
+    <input type="radio" />
+    <input type="checkbox" />
+    <input type="file" />
+</body>
+</html>

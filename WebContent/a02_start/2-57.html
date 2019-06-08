@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
     <script>
         {
             // 스코프 A
             var variable = 273;
         }
         {
-            // 스코프 B var 변수는 다른 block에서도 사용가능.
-            // var변수 전역변수로 활용된다.
-            alert("다른 block:"+variable);
+            // 스코프 B
+            alert(variable);
         }
         // 전역 스코프
-        alert("전역변수영역:"+variable);
+        alert(variable);
     </script>
 </head>
 <body>

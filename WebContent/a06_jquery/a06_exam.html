@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("h1").html("계산 시험");
+		
+		
+		// 2 ~ 9 숫자가 임의의 처리..
+		// 경우의 수, 시작수..
+		// 1. Math.random()의 변수 R은   0.0<= R < 1.0
+		// 2. Math.random()*경우의 수   :경우의 수 범위로 변경.
+		//     0.0<=  R*8 < 8.0
+		// 3. Math.random()*경우의 수+시작수 : 경우의 수 +시작 수 범위 내용을 호출.
+		// 4. Math.floor() : 소숫점 이하를 절삭처리..
+		exam();
+		setTimeout(function(){
+			//alert(  $("select>option:selected").val() );
+			var idx = $("select>option:selected").val();
+			var num01 = parseInt( $("[name=num01]").val());
+			var num02 = parseInt( $("[name=num02]").val());
+			var calArry =[num01+num02,num01-num02,num01*num02,parseInt(num01/num02)];
+			//alert("정답은 :"+calArry[idx]);
+			var inmum = $("input[name=inmum]").val();
+			if(calArry[idx]== inmum){
+				$("h2").html("정답");
+			}else{
+				$("h2").html("오답");
+			}
+			// if
+		}, 5000);
+
+	});
+	function exam(){
+		var grade =  Math.floor( Math.random()*8+2 );
+		$("[name=num01]").val(grade);
+		var cnt = Math.floor( Math.random()*9+1 ) ;
+		$("[name=num02]").val(cnt);
+		// 4칙연산도 임의로 발생.   +, -, *, /
+		var cals = ["+","-","*","/"];
+		// cals[0~3]
+		var rIdx = Math.floor( Math.random()*cals.length );
+		//alert( cals[rIdx] );
+		$("[name=cal]").val( rIdx );		
+	}
+</script>
+</head>
+<body>
+	<h1></h1>
+	<input name="num01" size="2"/>
+	<select name="cal">
+		<option value="0">+<option>
+		<option value="1">-<option>
+		<option value="2">*<option>
+		<option value="3">/<option>
+	</select>
+	<input name="num02" size="2"/>
+	=<input name="inmum" size="2"/><br>
+	<h2></h2>
+	
+</body>	
+</html>

@@ -4,13 +4,6 @@
     <script>
         // 변수를 선언합니다.
         var input = prompt('숫자를 입력해주세요.', '숫자');
-        // 형변환 처리함수.
-        // 1. Number() : 실수형/정수형 문자열은 다 숫자로 변환처리.
-        // 2. parseInt(), parseFloat()
-        //      정수형으로           실수형으로     숫자로 변환 처리..
-        // prompt로 입력된 데이터는 문자열이기 때문에 숫자로 변환이
-        // 필요하다.
-        
         var numberInput = Number(input);
         // 출력합니다.
         alert(typeof (numberInput) + ': ' + numberInput);

@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
     <script>
         // 인코딩할 URL을 만듭니다.
-        // 한글은 네트웍상, 파일전송시 encoding을 처리하여야 한다.
-        // js는 아래와 같이 endcoding함수를 지원하고 있다.
         var URI = 'http://hanbit.co.kr?test=한글입니다.';
         // 출력할 문자열을 만듭니다.
         var output = '';
-        output += '★escape()<br>'
-        output += escape(URI) + '<br>';
-        output += '★encodeURI()<br>'
-        output += encodeURI(URI) + '<br>';
-        output += '★encodeURIComponent()<br>'
-        output += encodeURIComponent(URI) + '<br>';
+        output += '★escape()\n'
+        output += escape(URI) + '\n\n';
+        output += '★encodeURI()\n'
+        output += encodeURI(URI) + '\n\n';
+        output += '★encodeURIComponent()\n'
+        output += encodeURIComponent(URI) + '\n\n';
         // 출력합니다.
-        document.write(output);
+        alert(output);
     </script>
 </head>
 <body>

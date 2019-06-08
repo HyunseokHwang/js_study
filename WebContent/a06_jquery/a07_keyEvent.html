@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("h1").html("안녕하세요!! jquery 시작");
+		// 화면전체를 대상으로 key를 입력했을 때, keycode값을 가져온다.
+		$(this).keyup(function(e){
+			$('h1').html(e.keyCode);
+			if(e.keyCode==39){
+				idx++;
+				$("td").eq(idx).css("background-color","yellow");
+			}
+		});
+		var idx=0;
+		$("td").eq(idx).css("background-color","yellow");
+		
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<table border width="300" height="300">
+		<col width="33%">
+		<col width="33%">
+		<col width="33%">
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+</body>	
+</html>

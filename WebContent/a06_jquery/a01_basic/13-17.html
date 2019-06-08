@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+        	// $(.클래스명1.클래스명2) : 클래스명1과 클래스명2
+        	// 모두 선언되어 있는 dom 객체..
+            $('.item.select').css('color', 'orange');
+        	var cls01 = document.querySelector(".cls01");
+        	// background-color:red;
+        	// backgroundColor : - 구분자는 js속성으로는 대문자로 시작하게 처리.. 
+        	cls01.style.backgroundColor="pink";
+        	// attr("기본속성","속성값")
+        	$(".item.subSel").attr("align","center");
+        });
+        function call(){ // 이벤트를 통한 동적인 속성값의 변경..
+        	$("#id01").attr("align","right");
+        	$("#id01").html("변경!!"); // textnode의 데이터 변경처리.
+        	var id01 = document.querySelector("#id01");
+        	id01.style.color="blue";
+        };
+        // ex) h1 7개 만들고 클릭할 때, 마다, 해당 textnode에 있는 무지개색상으로
+        //      배경 색상을 처리하세요.
+        //     1. js, jquery
+        //     <h1>red</h1>
+        //     <h1>orange</h1>
+        //     <h1>yellow</h1>
+        //     <h1>green</h1>..
+    </script>
+</head>
+<body>
+	<h1 id="id01" onclick="call()">클릭해서 속성 변경합니다</h1>
+    <h1 class="item subSel">Header-0</h1>
+    <h1 class="item select">Header-1</h1>
+    <h1 class="item">Header-2</h1>
+    <h2 class="cls01">배경색상</h2>
+</body>
+</html>

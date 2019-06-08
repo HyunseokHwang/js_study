@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
     <script>
-        function Student() {
+/* 
+# 객체 생성은.
+1. 틀이 만들어진 생성자에 객체를 생성하는 것.
+	생성자형 함수를 선언..
+	function 객체명(){
+	   this.속성명 = 속성값
+	   // this: 이 객체가 가지고 있는 속성.
+    }
+    var ob1 = new 객체명();
+    var ob2 = new 객체명();
+2. 바로 속성값을 설정하여 만들어 가는 것..
+	var p1 = {name:"홍길동",show:function(){}};
 
+
+
+ */    
+        function Student(name, age) {
+			this.name=name;
+			this.age=age;
+			this.show=function(){
+				document.write("<h2>이름:"+this.name+"</h2>");
+				document.write("<h2>나이:"+this.age+"</h2>");
+				
+			};
         }
+ 		var s1 = new Student("홍길동", 25);
+ 		var s2 = new Student("신길동", 29);
+ 		// s1 :참조변수
+ 		// s1.name : 참조변수.속성
+ 		document.write("<h1>s1.name:"+s1.name+"</h2>");
+ 		s1.show(); // 기능 함수 : 메서드
+ 		s2.show();
+ 		
+ 		
+ 		
+ 		
     </script>
 </head>
 <body>

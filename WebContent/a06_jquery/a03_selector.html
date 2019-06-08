@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("h1").html("안녕하세요!! jquery 시작");
+/* css에서 쓰이는 선택자를 통한 접근..
+ * 1. js
+ 		1) document.querySelector("단일dom(id)//여러 dom중에 첫번째") : 단일 객체
+ 		2) document.querySelectorAll("tag/class 중에 여러개 적용") : 배열 객체
+   2. jquery 
+   		$("selector형식")
+   3. selector(선택자) 형식
+   		1) 태그명    ex) document.querySelector("h1"), $("h3")
+   		2) #id명  ex) document.querySelector("#ch01"), $("#sel01")
+   		3) .클래스명 ex) document.querySelectorAll(".cls01"), $(".cls01");
+   		4) 요소[속성], 요소[속성=값], 필터 선택자 요소:button, 요소:focus,
+   		    요소:nth-child
+ */		
+ 		var h2 = document.querySelector("h2"); // 1개만 선택한다(첫번째)
+ 		h2.innerHTML = "선택되었습니다querySelector('h2')";
+ 		var cls01 = document.querySelectorAll(".cls01"); // 여러 객체를 선택..(배열)
+ 		for(var idx=0;idx<cls01.length;idx++){
+ 			cls01[idx].innerHTML="안녕하세요 class(cls01["+idx+"])";
+ 		}
+ 		//cls01[1].innerHTML="선택 class(cls01[1])";
+ 		// jquery에서는 기본적으로 selector형식으로 대상 객체를 지정한다.
+ 		$("#ch01").html("jquery로 아이디 ch01 선택!!!");
+ 		$(".cls02").html("jquery에서는 한번에 공통 내용은 모든 데이터 변경");
+ 		
+ 		
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<h2>선택h2</h2>
+	<h2>선택h2</h2>
+	<h3 class="cls01">클래스 선택</h3>
+	<h3 id="ch01">클래스 선택</h3>
+	<h3 class="cls01">클래스 선택</h3>
+	<h3 class="cls02">클래스 선택</h3>
+	<h3 class="cls01">클래스 선택</h3>
+	<h3 class="cls02">클래스 선택</h3>
+	<h3 class="cls01">클래스 선택</h3>
+	<h3 class="cls02">클래스 선택</h3>
+	<h3 class="cls01">클래스 선택</h3>
+	<h3 class="cls01">클래스 선택</h3>
+	<h3>클래스 선택</h3>
+</body>	
+</html>

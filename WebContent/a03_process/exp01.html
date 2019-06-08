@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-// prompt(), 에서 점수를 입력받아서,
-// 60점 이상이면 합격, 그외에는 불합격 처리..
-// if(조건){}else{} 구문이용..
-// document.write("")
-var point = prompt("점수를 입력하세요");
-// point값이 비교연산자에서 자동 형변환 처리되어.. 숫자로 바뀌어.
-if(point>=60){
-	document.write("<h2>합격</h2>");
-	// 중첩 조건.. 60인 경우에..
-	if(point>=90){ // 90이상
-		document.write("<h3>A등급입니다.</h3>");
-	}else if(point>=80){ // 90이상을 제외하고(else), 80이상.. 
-		document.write("<h3>B등급입니다.</h3>");
-	}else{
-		document.write("<h3>C등급입니다.</h3>");
-	}
-}else{
-	document.write("<h2>불합격 처리</h2>");
-}
+	var point = prompt("점수를 입력하세요.");
 
+	if(point>=60){
+		document.write("합격입니다");
+		
+		if(point>=90){
+			document.write("A등급입니다.");
+		}else(point>=80){
+			document.write("B등급입니다.");
+		}else{
+			document.write("C등급입니다.");
+		}
+		
+		
+		
+		
+		
+	}else{
+		document.write("불합격입니다");
+	}
 </script>
 </head>
 <body>

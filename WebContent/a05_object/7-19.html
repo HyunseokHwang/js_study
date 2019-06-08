@@ -2,13 +2,27 @@
 <html>
 <head>
     <script>
+    // es6 이후..
+/* 
+# 클래스
+1. 클래스는 비유적으로 설계도로 객체를 생성하는 틀역할을 한다.
+2. constructor() : 클래스명과 동일한 생성자를 호출했을 때, 처리된다.
+   new Rectangle(100, 200)  ==> constructor( 100, 200)에 할당과
+   동일하다.
+     
+ */    
+    
         class Rectangle {
             constructor(width, height) {
                 this.width = width;
                 this.height = height;
             }
         }
-        const rectangle = new Rectangle(100, 200);
+        const rectangle1 = new Rectangle(100, 200);
+        const rectangle2 = new Rectangle(200, 200);
+       	document.write("<h2>rectangle1.width:"+rectangle1.width+"</h2>");
+        
+        
     </script>
 </head>
 <body>

@@ -3,76 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- 
-jquery 환경 setting
-1. CND(content network delivery)
-2. 서버에 lib를 설정
- -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script type="text/javascript">
-//var 객체.메서드명=function(){};
-//$(객체).메서드( function(){} );
-//document가 화면에 준비되었을 때 처리하겠습니다.
- $(document).ready( function(){
-	$("h1").html("jquery start!!");
-	/* 
-	$("객체").html("화면에 입력할 내용");
-	$("객체").html(); 해당 객체에 입력된 내용을 가져온다.
-	$("selector기준으로 객체를 선택한다.") ex) #id명, .class명, tag
-	
-	 */
-	 $("#h01").html("아이디 선택합니다.");
-	 
-	 //선택자에 의해서 선택된 여러 객체에 동일한 내용을 적용할 때는 배열로 처리하지 않아도 된다.
-	 $(".cls01").html("클래스를 선택합니다.");
-	 $('td').html("1");
-	 //css 속성값 지정. $("객체").css("속성","속성값")
-	 $("td").css("text-align","center");
-	 // 동일한 객체에 순서별로 다른 속성을 적용
-	 //$(객체: eq())
-	 $("td").eq(0).html("1");
-	 $("td").eq(1).html("2");
-	 $("td").eq(2).html("3");
-	 
-	 for(var i=0; i<$("td").length; i++){
-		 $("td").eq(i).html(i+1);
-	 }
-	 
-	 //jquery 이벤트 처리..
-	 //$(객체).이벤트명(function(){});
-	 $("td").click(function(){
-		 //$(this) : 여러 td중에서 클릭한 td를 지칭
-		 alert("클릭! : "+$(this).html());
-		 //클릭한 것의 배경 색상을 변경
-		 $(this).css("background-color","pink");
-	 });
-	 // jquery의 .hover(함수1, 함수2)
-	 // 함수1 : 마우스의 커서를 위치시켰을 때 처리할 내용 (mouse enter)
-	 // 함수2 : 마우스의 커서를 위치에서 벗어나게 했을 때 처리할 내용 (mouse leave)
-	 $("td").hover(function(){
-		 $(this).css("background-color","yellow");
-	 }, function(){
-		 $(this).css("background-color","white");
-	 });
- });
+	$(document).ready( function(){
+		$("h1").html("jquery start!!");
+		$("#h01").html("아이디 선택합니다.");
+		$("td")
+	});
+
 </script>
 </head>
 <body>
-<h1>안녕하세요.</h1>
-<h1 id="h01">안녕하세요.</h1>
-<h1 class="cls01">안녕하세요.</h1>
-<h1 class="cls01">안녕하세요.</h1>
-
-<table width="300" height="300" border="1">
-<tr>
-<td></td><td></td><td></td>
-</tr>
-<tr>
-<td></td><td></td><td></td>
-</tr>
-<tr>
-<td></td><td></td><td></td>
-</tr>
-</table>
+	<h1>안녕하세요</h1>
+	<h1 id="h01">안녕하세요</h1>
+	<h1>안녕하세요</h1>
+	<table width="300" height="300">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
 </body>
 </html>

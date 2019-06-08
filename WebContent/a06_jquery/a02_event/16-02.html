@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 이벤트를 연결합니다.
+            // 1. $(객체).이벤트명(function(){  이벤트를 통해서 처리할 내용.});
+            // 2. $("객체").on("이벤트명",function(){});
+            // 3. $("객체").on({"이벤트1":function(){},"이벤트2":function(){}})
+            
+            $('h1').on('click', function () {
+            	// $(this) : 여러개의 h1객체중에, 이벤트를 처리할 객체 h1
+            	//   문자열을 추가 처리..
+                $(this).html(function (index, html) {
+                    return html + '+';
+                });
+            });
+            $("h2").on('click',function(){
+            	//  append(): 기존의 html에서 추가적인 내용을 처리할 때..
+            	$(this).append("^^!");
+            });
+        });
+    </script>
+</head>
+<body>
+	<h2>클릭!!!</h2>
+	<h2>클릭!!!</h2>
+	<h2>클릭!!!</h2>
+	<h2>클릭!!!</h2>
+	<h2>클릭!!!</h2>
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+    <h1>Header-3</h1>
+    <h1>Header-4</h1>
+    <h1>Header-5</h1>
+</body>
+</html>

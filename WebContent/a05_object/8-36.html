@@ -2,8 +2,15 @@
 <html>
 <head>
     <script>
+    	var today =new Date();
+    	// 1000(1/1000) ==> 1 =60=> 1분....시간  일   월   년도.. 
+    	// 기본 데이터는 현재 날짜.
+    	document.write("<h2>"+today+"</h2>");
+    
+    	// 
         var date = new Date(1991, 11, 9);
         var date = new Date(1991, 11, 9, 2, 24, 23);
+        //   new Date(YYYY, MM-1(월0~11),DD,HH,MI,SS,1/1000)
         var date = new Date(1991, 11, 9, 2, 24, 23, 1);
     </script>
 </head>

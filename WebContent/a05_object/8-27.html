@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
     <script>
         // 변수를 선언하고 정렬합니다.
         var array = [52, 273, 103, 32];
         array.sort(function (left, right) {
             return left - right;
         });
-        // 출력합니다.
-        alert(array);
+        // 출력합니다. 오름차순
+        document.write("<h1>정렬후"+array+"</h1>");
+        array.sort(function (left, right) {
+            return right - left;
+        });    
+        document.write("<h1>정렬후"+array+"</h1>");     
     </script>
 </head>
 <body>

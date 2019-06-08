@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="${encoding}">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$$(document).ready( function(){
+		$$("h1").html("안녕하세요!! jquery 시작");
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+</body>	
+</html>

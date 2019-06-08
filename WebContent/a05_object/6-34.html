@@ -2,10 +2,15 @@
 <html>
 <head>
     <script>
+    // es6 객체 복제 처리..
         // 배열을 선언합니다.
         const originalArray = [1, 2, 3, 4, 5];
         // 배열을 복제합니다.
+        // es6에서는  const  배열명 = [...기본배열명]
         const newArray = [...originalArray];
+        newArray[0]=273;
+        document.write("<h2>originalArray:"+originalArray+"</h2>");
+        document.write("<h2>newArray:"+newArray+"</h2>");        
     </script>
 </head>
 <body>

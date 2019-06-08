@@ -4,25 +4,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	window.onload=function(){
-		document.body.innerHTML="<h1>시작!!</h1>";		
-/* 
-	식당에서 메뉴를 주문받아서, 주문종료시까지 데이터 받아서,
-	주문된 내용을 리스트 처리 하는 프로그램을 while문을 통해서 만들어 보자.
-	1. 주문 list 배열..
-	2. while( confirm("주문하시겠습니까?") ){
-		  list.push(prompt("주문할 메뉴를 입력하세요!") );
-	   }
-	   alert("주문 완료\n주문된 내용");
-	   document.write("<h2>"+list+"</h2>");
- */		
-		var orList=[]; // 주문할 내용..
- 		while( confirm("주문을하시겠습니까?\n그만하실려면 취소를") ){
- 			orList.push(prompt("주문내역을 입력하세요!"));
- 		}
-		document.write("<h2>주문완료!! 주문내역</h2>");
-		document.write("<h3>"+orList+"</h3");
-	};
+	var price = [2000, 3000, 4000];
+	price[0] = 5000;
+	document.write(price+"<br>");
+	price.push(9000);
+	document.write(price.pop()+"<br>");
+	document.write(price+"<br>");
+	document.write(price.pop()+"<br>");
+	document.write(price+"<br>");
+	document.write(price.length+"<br><br><br><br>");
+	
+	var cnt = 1;
+	
+	while(cnt <= 10){
+		document.write("카운트 : " + cnt + "<br>");
+		cnt++;
+	}
+
+	
+	
+	
 </script>
 </head>
 <body>

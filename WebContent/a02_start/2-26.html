@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
     <script>
-    // window.onload=function(){} : 
-    //  화면이 로딩된 후, 즉, 태그를 메모리에 올린 후에 처리하겠다라는 말로
-    // 
         window.onload = function () {
-    		var nameList= "홍길동";
-    		nameList+=", 김길동";
-    		nameList+=", 신길동";
-    	
-    	
             // 변수를 선언합니다.
             var list = '';
             // 연산자를 사용합니다.
-            
             list += '<ul>';
             list += '    <li>Hello</li>';
             list += '    <li>JavaScript..!</li>';
             list += '</ul>';
-            // 문서에 출력합니다. : innerHTML : 해당 문자열에 처리하되,
-            // tag가 있으면 html태그를 랜더링(해석) 출력 처리..
+            // 문서에 출력합니다.
             document.body.innerHTML = list;
-            document.body.innerHTML += nameList;
         };
     </script>
 </head>

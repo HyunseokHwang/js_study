@@ -4,37 +4,32 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	window.onload=function(){
-		document.body.innerHTML="<h1>구구단 처리.</h1>";
-		// 2중 for 
-		// for문 안에 for문을 처리하는 경우를 말한다.
-		//  ex) 2차원의 테이블성 데이터 
-		// 구구단의 처리 로직..
-		// 2~9 : 단수를 출력..      1차
-		//    단 내부에  1~9를 처리      2차..
-		//  break : 반복문 자체를 중단 처리..
-		var show="";
-		for(var grade=2;grade<=9;grade++){ // 단수 출력..
-			if(grade == 5){
-				break; // 5단일때, 반복프로세스를 중단
-			}
-			show+="<h2>"+grade+"단</h2>";
 
-			for(var cnt=1;cnt<=9;cnt++){
-				// 2 * 1 = 2
-				// continue는 해당 process만 pass by 한다.
-				if( cnt==7 ){
-					continue;
-				}
-				
-				show+="<h3>"+grade+" X "+cnt+" = "+(grade*cnt)+"</h3>";
-			}
-		}
-		document.body.innerHTML+=show;
+	window.onload = function(){
+		document.body.innerHTML = "<h1>시작!!</h1>";
+		var show = "";
+		show += "<table border>";
+		show += "<tr><th>사원번호</th><th>이름</th><th>직급</th></tr>";
+		show += "<tr><td>7000</td><td>홍길동</td><td>사원</td></tr>";
+		show += "</table>";
+		document.body.innerHTML += show;
+
 		
-	};
+		var empList = [
+			{empno:7001, ename:"홍길동", job:"사원"},
+			{empno:7002, ename:"신길동", job:"대리"},
+			{empno:7003, ename:"마길동", job:"과장"},
+		];
+		empList.push({empno:7004, ename:"오길동", job:"차장"});
+		
+		for(var idx=0; idx<empList.length; idx++){
+			var emp = empList[idx];
+		}
+};	
+
 </script>
 </head>
+
 <body>
 
 </body>

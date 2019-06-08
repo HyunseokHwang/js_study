@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
     <script>
-        // 배열을 선언합니다.
+        // 객체를 선언합니다.
         const originalObject = {
             name: '윤인성',
             birthDay: new Date(2016, 12 - 1, 9).toString()
         };
-        // 배열을 복제합니다.
+        // 객체를 복제합니다.
+        // 객체명 = {...복제할객체};
         const newObject = {...originalObject};
+        originalObject.name="신길동";
+       	const cpyAddObject = originalObject;
+       	document.write("<h2>originalObject:"+JSON.stringify(originalObject)+"</h2>");
+       	document.write("<h2>newObject:"+JSON.stringify(newObject)+"</h2>");
+       	document.write("<h2>cpyAddObject:"+JSON.stringify(cpyAddObject)+"</h2>");
+       	
     </script>
 </head>
 <body>

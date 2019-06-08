@@ -4,14 +4,16 @@
     <script>
         class Rectangle {
             constructor(width, height) {
+            	// this._XXX : 접근제어자를 private 선언..
+            	// 외부에서 이 속성을 직접접근을 하지 못하게 처리..
                 this._width = width;
                 this._height = height;
             }
-            // width의 게터와 세터
+            // width의 게터와 세터  ==> alert(참조변수.width)
             get width() {
                 return this._width;
             }
-            set width(input) {
+            set width(input) { // 참조변수.width = 250
                 this._height = input;
             }
             // height의 게터와 세터
@@ -27,7 +29,7 @@
         }
         const rectangle = new Rectangle(100, 200);
         rectangle.width = 200;
-        alert(rectangle.width);
+        alert(rectangle.width); // 필드을 호출 X, get width() 메서드를 호출.
         alert(rectangle.getArea());
     </script>
 </head>

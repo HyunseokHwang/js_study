@@ -37,6 +37,7 @@
         students.sort(function (left, right) {
             return right.getSum() - left.getSum();
         });
+        // slice(0, 3) 배열의 특정한 위치를 자르는 처리..
         students = students.slice(0, 3);
         // 출력합니다.
         var output = '이름\t총점\t평균\n';

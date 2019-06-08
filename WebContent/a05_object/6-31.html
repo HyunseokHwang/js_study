@@ -4,21 +4,29 @@
     <script>
         // 객체를 복제하는 함수입니다.
         function clone(obj) {
-            var output = {};
-            for (var i in obj) {
+            var output = {}; // {} 새로운 heap영역에 객체를 생성
+            for (var i in obj) { // 속성값을 복사.
                 output[i] = obj[i];
             }
             return output;
         }
         // 테스트합니다.
         var original = { a: 10, b: 20 };  // 원본 객체
+        // 주소값을 복사하기에 original이 변경 되면
+        // referenced도 변경이 된다.
         var referenced = original;   // 얕은 복사 객체
+        // clone는 함수를 이용하면..
+        // heap영역에 새로운 객체를 만들어 복사를 하기에
+        // original이 변경이 되어도 cloned는 영향을 미치지 않는다.
         var cloned = clone(original);   // 깊은 복사 객체
         // 원본의 값 변경
         original.a = 20;
         // 확인
-        alert(JSON.stringify(referenced, null, 2))
-        alert(JSON.stringify(cloned, null, 2))
+        // JSON.stringify() : 일반객체를 json문자형으로 변환처리 객체메서드.
+        // JSON.parse() : json문자형을 객체로 변환처리.(###)
+        document.write("<h2>"+JSON.stringify(referenced, null, 2)+"</h2>");
+        document.write("<h2>"+JSON.stringify(cloned, null, 2)+"</h2>");
+
     </script>
 </head>
 <body>

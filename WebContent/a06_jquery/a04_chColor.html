@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		$("h1, h2, h3").attr("align","center");
+	});
+	function chColor(color,idx){
+		// chColor("red",0)
+		alert(color+":"+idx);
+		var h1 = document.querySelectorAll("h1");
+		// h1[입력된 index].style.backgroundColor="넘겨온 색상";  
+		h1[idx].style.backgroundColor=color;
+	}
+	function chColor2(obj){
+		// chColor2(this) : 넘겨받은 객체를 obj로 받는 처리.
+		// obj는 어떤 DOM객체 인지(위치와 tag, 가지고 속성.)
+		alert( $(obj).html() );
+		$(obj).css("background-color",$(obj).html());
+	}	
+	function chColor3(){
+		// $("h3") 배열 일때..
+		//   color 속성을  현재 h3가 가지고 있는 html으로 적용하세요..
+		$("h3").css("color",function(){
+			return $(this).html();
+		});
+	}	
+	
+</script>
+</head>
+<body>
+	<h1 onclick="chColor('red',0)">red</h1>
+	<h1 onclick="chColor('orange',1)">orange</h1>
+	<h1 onclick="chColor('yellow',2)">yellow</h1>
+	<h1 onclick="chColor('green',3)">green</h1>
+	<h1 onclick="chColor('blue',4)">blue</h1>
+	<h1 onclick="chColor('navy',5)">navy</h1>
+	<h1 onclick="chColor('purple',6)">purple</h1>
+	<h2 onclick="chColor2(this)">red</h2>
+		 <!--  함수(this) :현재 클릭한 객체에 대한 모든 객체정보를 전송.. -->
+	<h2 onclick="chColor2(this)">orange</h2>
+	<h2 onclick="chColor2(this)">yellow</h2>
+	<h2 onclick="chColor2(this)">green</h2>
+	<h2 onclick="chColor2(this)">blue</h2>
+	<h2 onclick="chColor3()">purple</h2>
+	<h3 onclick="chColor3()">red</h3>
+	<h3 onclick="chColor3()">orange</h3>
+	<h3 onclick="chColor3()">yellow</h3>
+	<h3 onclick="chColor3()">green</h3>
+	<h3 onclick="chColor3()">blue</h3>
+	<h3 onclick="chColor3()">purple</h3>	
+</body>	
+</html>

@@ -5,10 +5,15 @@
         // 배열을 선언합니다.
         var originalArray = [1, 2, 3, 4, 5];
         // 배열을 복제합니다.
+        // var 객체명 = [];  새로운 객체가 heap영역에서 생성된다.
+        // var 객체명 = {};  새로운 객체가 heap영역에서 생성된다.
         var newArray = [];
         for (var i = 0; i < originalArray.length; i++) {
             newArray[i] = originalArray[i];
         }
+        newArray[0]=257;
+        document.write("<h2>originalArray:"+originalArray+"</h2>");
+        document.write("<h2>newArray:"+newArray+"</h2>");
     </script>
 </head>
 <body>

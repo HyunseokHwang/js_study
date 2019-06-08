@@ -3,6 +3,8 @@
 <head>
     <script>
         // 생성자 함수를 선언합니다.
+        // js의 encapulation
+        // width는 직접접근 차다ㅑㄴ..
         function Rectangle(w, h) {
             // 변수를 선언합니다.
             var width = w;
@@ -17,14 +19,23 @@
                 height = h;
             };
         }
+        
+        
+        
         Rectangle.prototype.getArea = function () {
             return this.width * this.height;
         };
+        Rectangle.prototype.getArea2 = function () {
+            return this.getWidth() * this.getHeight();
+        };       
         // 변수를 선언합니다.
         var rectangle = new Rectangle(5, 7);
-        rectangle.width = -2;
+        // 적용되지 않는다.
+        //rectangle.width = -2;
         // 출력합니다.
-        alert('AREA: ' + rectangle.getArea());
+        // 직접접근 불가로 해당 메서드의 속성값을 확인 할 수 없다.
+        alert('AREA1: ' + rectangle.getArea());
+        alert('AREA2: ' + rectangle.getArea2());
     </script>
 </head>
 <body>
