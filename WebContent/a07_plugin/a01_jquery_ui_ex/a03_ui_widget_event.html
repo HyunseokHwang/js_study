@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>jQuery UI Basic</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        #button { padding: 5px; }
+        #button p { margin: 0px; padding: 5px; text-align: center; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+			// hover 처리..
+			// 1. 대상 요소객체 지정..
+			// 2. .hover(함수1, 함수2)
+			// 3. ui에서 적용되는 클래스 적용 처리..
+			//    1) ui-state-hover 클래스를 적용처리 .addClass
+			//    2) ui-state-hover 클래스를 적용제거처리 .removeClass
+			$("#button").hover(function(){
+				//alert("마우스커서  들어 갈 때");
+				// $(this): 현재 이벤트가 일어나는 요소객체를 지칭
+				//  ui-state-hover class적용처리..
+				$(this).addClass("ui-state-hover");
+				
+			},function(){
+				//alert("마우스커서  벗어 났을 때");
+				// ui-state-hover class적용 삭제처리..
+				$(this).removeClass("ui-state-hover");
+			});
+			// .toggleClass("클래스") 적용처리.
+			// 1. 클래스 적용을 click시마다 반복적으로 적용/적용삭제를 처리할 때, 필요하다.
+			// 2. 대상객체 지정..
+			// 3. 이벤트 선택..
+			// 4. 이벤트가 발생시, toggleClass 처리..
+			$("#button").click(function(){
+				$(this).toggleClass("ui-state-active");
+			});
+ 			
+        });
+    </script>
+</head>
+<body>
+<!-- 
+# 상호 작용하는 플러그인 : ui-state-XXXX
+1. 속성 : default, hover, focus, active, hieghtlight, error, error-text, disabled.
+	- class로 선언 처리..
+2. jquery에서 설정하는 상호 작용.. 
+	1) .hover(마우스enter함수, 마우스leave함수) : 위에 있는 클랙스 적용..
+	2) .toggle("클래스") : 클래스 적용과 삭제를 반복처리..
+
+ -->
+    <div id="button" class="box ui-state-default ui-corner-all">
+        <p>Lorem ipsum dolor sit amet Button</p>
+    </div>
+</body>
+</html>

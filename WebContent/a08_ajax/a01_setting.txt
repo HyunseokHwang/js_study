@@ -1,0 +1,17 @@
+1. oracleXe 설치파일 압축풀기.
+2. setup.exe 파일실행
+3. 비밀번호 입력시  1234
+4. 설치가 완료된 후,
+5. c:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\
+	의 scott.sql을  현재 사용자 폴드에 복사. 
+	scott.sql파일에 비밀번호를 2개 소문자 tiger로 변경.
+	24line GRANT CONNECT,RESOURCE,UNLIMITED TABLESPACE TO SCOTT IDENTIFIED BY tiger;
+	27line CONNECT SCOTT/tiger
+	ex) C:\Users\kosmo07-00(사용자계정) 에 복사.
+6. cmd 창에서 sqlplus
+7. system/1234
+8. sql>@ scott.sql	
+
+// scott//tiger 
+// c:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\
+@ scott.sql 

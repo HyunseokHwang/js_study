@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+/*
+# a03_xmlhttprequest.html
+1. XMLHttpRequest 객체 생성 과정..
+	1) 이벤트를 통해서, 객체 생성 처리..
+	2) 서버에 특정한 자원 호출
+	3) 요청값 전달과 반응값 처리 이벤트 선언(readystatechange)
+	4) 서버에 전달..
+ 
+ */
+
+	$(document).ready( function(){
+		$("h1").html("Ajax 연습 예제(click XMLHttpRequest객체 생성)");
+	// 1) 이벤트를 통해서, 객체 생성 처리..
+		$("h1").click(function(){
+		// - XMLHttpRequest 객체 생성..
+			var xhr = new XMLHttpRequest();
+	//		alert(xhr);
+	// 2) 서버에 특정한 자원 호출
+		// .open("get/post",'서버의자원',비동기방식여부)
+			xhr.open("get",'z01_data.txt',true);
+	// 3) 요청값 전달과 반응값 처리 이벤트 선언(readystatechange)
+		// 비동기 통신일 때, 정상적으로 서버와의 데이터를 처리 검증 한 후에.
+		// 서버에 있는 자원을 가져올 수 있다.
+		// - 전송 상태 readyState 확인 
+		//  	0 : 객체 생성, 1/2 : 데이터 전송 준비, 3: 데이터 전송시작
+		//      4 : 데이터 전송 완료
+		// - http의 반응 코드가 정상범위 status
+		//      200~299 범위일 때, 성공처리..
+		// - 위에 정의된 check 코드가 정상 범위일 때, .responseText값을 서버에서 받을 수 있다
+			xhr.onreadystatechange=function(){
+				if( xhr.readyState == 4){
+					if( xhr.status>=200 && xhr.status <300){
+						//alert( xhr.responseText );
+						$("div").html("<h2>서버에서 온 데이터:"+xhr.responseText+"</h2");
+					}
+				}
+			};
+	//4) 서버에 전달..
+			xhr.send();
+			
+		});
+	//	
+		
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<div></div>
+</body>	
+</html>

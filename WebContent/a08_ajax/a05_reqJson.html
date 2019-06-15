@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		/// 1. 객체 생성..
+		var xhr = new XMLHttpRequest();
+		$("h1").html("요청값 처리 ajax");
+		$("[type=text]").focus(function(){ $(this).val("") });
+		$("[type=text]").keyup(function(){
+			var no1Val = $("[name=num01]").val();
+			var no2Val = $("[name=num02]").val();
+			// 전송규칙. : query string 형식..
+			var sndData = "num01="+no1Val+"&num02="+no2Val;
+			$('div').html(sndData);
+			// 2. 자원 호출..
+			xhr.open("get","z03_reqData.jsp?"+sndData,true);
+			// 3. 이벤트 선언.
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState == 4 &&  xhr.status==200){
+					var calc= JSON.parse(xhr.responseText);
+					var show="<h2>"+calc.num01+" + ";
+					show+=calc.num02+" = ";
+					show+=(calc.num01+calc.num02)+"</h2>";
+					
+					$("div").html(show);
+					
+				}
+			};
+			// 4. 전달.
+			xhr.send();
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<input type="text" name="num01" value="0"/> +
+	<input type="text" name="num02" value="0"/> 
+	<div></div>
+	
+</body>	
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Basic</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        .box { padding: 5px; }
+        .box p { margin: 0px; padding: 5px; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+/* 
+# .buttonset()
+1. radio 버튼을  메뉴 바로 css 적용하고, 클릭시, 해당 메뉴에 대한 처리를 하는
+	jquery ui plugin이다.
+2. 상호 작용하는 plugin 중에 하나이다. 
+3. 기본 형식 : $(요소객체).buttonset();
+	- css 변경 처리와 이벤트를 할  수 있는 형태로 처리된다.
+	
+ */        	
+        	$("#radio").buttonset();
+			reset();	
+			//  1. <input type="radio" 요소객체가 클릭시 마다, 해당 value값에 있는 내용으로
+			//  #output  div가  class가 변경되게 처리 하자..
+			//  2. $("radio요소객체").change() : 해당 값을 값을 변경시, 나타나는 이벤트처리. 
+			$("#radio>input").change(function(){
+			//  4. removeClass() 적용 처리..()
+				$("#output").removeClass();				
+				//alert( $(this).val() );
+			//  3. reset()을 통해서, 기존에 적용된 클래스 값을 초기화 처리..
+				reset();
+			//  5. val()로 설정한 속성값 처리..
+			//		 ui-state-highlight
+				$("#output").addClass("ui-state-"+$(this).val());
+			});
+			// reset 버튼을 통해서 초기화 처리..
+			$("button").click(function(){
+				$("#output").removeClass();		
+				reset();
+			});
+/*
+4. 클릭시 마다 해당 radio의 label에 있는 속성 이벤트 처리.. 
+	1) .addClass() : 클래스 적용은 기존 클래스 적용을 삭제한 후에, 적용이 된다.
+	2) 위에 .addClass()의 특징으로 .addClass() 처리시에 사전에 반드시,
+		적용된 내용을 .removeClass() 통해서 삭제처리 후, 다시 적용하여야 한다.
+	3) 초기화 함수를 정의하고, 해당 내용을 클릭시 마다, 초기화 함수가 적용되게 한다.	
+ */	
+        });
+		// 초기 기능 함수 선언..
+		function reset(){
+			var resetClass="ui-corner-all ui-widget-content box";
+			$("#output").attr("class",resetClass);
+		}        
+    </script>
+</head>
+<body>
+    <div id="radio">
+        <input type="radio" name="theme" id="highlight" value="highlight" />
+        <label for="highlight">highlight</label>
+        <input type="radio" name="theme" id="error" value="error" />
+        <label for="error">error</label>
+        <input type="radio" name="theme" id="error-text" value="error-text" />
+        <label for="error-text">error-text</label>
+        <input type="radio" name="theme" id="disabled" value="disabled" />
+        <label for="disabled">disabled</label>
+        <button>RESET</button>
+    </div>
+    <br />
+    <div id="output">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</body>
+</html>

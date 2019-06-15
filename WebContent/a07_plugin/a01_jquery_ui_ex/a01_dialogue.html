@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Basic</title>
+    <!-- 
+    # 환경 설정.
+    1. css 환경으로 css/ui-lightness/jquery-ui-1.10.3.custom.css
+    2. 사용자 정의 css 설정..
+    3. 사용할 jquery lib 설정..
+       jquery 기본 lib와 jquery ui 적용 lib가 호환성 부분에 반드시 test 처리..
+    4. 사용할 jquery-ui lib 설정 처리..   
+     -->
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        body { font-size: 62.5% }
+        h1 { text-align:center; }
+        input[type="text"], label {
+            margin-bottom: 12px; padding: .4em; 
+            width: 95%;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+		// 1. plugin인 핵심적인 함수를 확인하여, 해당 함수를 호출 처리.
+		//  	ex) $("적용할 화면요소객체").메인 함수();
+        //   	- 메인함수를 적용함으로 지정된 css와 jqueryui에 기본 기능이 적용.
+        // 2. 기능 옵션 적용.
+        //     1) $("적용할 화면요소객체").메인 함수({속성:속성값, 속성함수:function(){}})
+        //     2) 초기에 로딩되어 있지 않다가, 클릭하는 순간 popup처리..
+        //     		- autoOpen:false
+        //          - click할 대상 이벤트 객체를 지정..
+        //				ex) $("클릭한 객체").click(function(){ });
+        //			- 이벤트를 통해서 다이로그대상객체.dialog("open");
+        //     3) 팝업안에  버튼 등록과 버튼을 통한 이벤트 처리..
+        // 			- buttons:{"버튼이름":function(){처리할 내용}}
+        //             function(){ 클릭했을 때, 처리할 내용을 기술 }
+        //     4) 이벤트를 통한 dialog 창닫기. : $(대상객체).dialog("close")
+        //     5) modal ? 팝업이나 기능 처리하는 모듈이 있을 때, 주위에 다른 요소객체를 비활성화
+       	//        하여 현재 모듈에 집중하여 처리할 수 있게 하는 기능처리 개념..
+       	//        $("대상객체").dialog({modal:true})
+        
+        	$("#dialog").dialog({
+        		autoOpen:false,
+        		modal:true,
+        		buttons:{
+        			"등록":function(){
+        				// 요청 querystring 처리를 통해서 서버에 전달.
+        				// querystring이란? 웹서버에 요청값을 전달하는 형식을 말한다.
+        				// ex) page주소?key=value&key2=value2		
+        						
+        				var evt_name = $("#event-name").val(); 
+        				var evt_date = $("#event-date").val(); 
+        				var sndData = 'ename='+evt_name+"&edate="+evt_date;
+        				alert("서버에 전달:"+sndData);
+        				alert("서버에 전달완료,등록처리(ajax)");
+        				$("#event-name").val("");
+        				$("#event-date").val("");
+        				
+        			},
+        			"수정":function(){ alert("수정처리 완료"); },
+        			"삭제":function(){ alert("삭제처리 완료");},
+        			"창닫기":function(){
+        				$("#dialog").dialog("close");
+        				
+        			}
+        		}
+        	});
+        	$("#open-button").click(function(){
+        		//alert("호출");
+        		$("#dialog").dialog("open");
+        	});
+//			3. 날짜를 클릭시, datepicker 모듈 호출, 월 캘린더 선택UI
+//          $("대상객체").datepicker({속성:속성값});
+//  			1) dataFormat : 'yy/mm/dd' 년도월일을 형식에 맞게 출력
+//  			2) numberOfMonths : 2 한번에 볼 일  월형식..
+        	$("#event-date").datepicker({
+        		dateFormat:'yy년 mm월 dd일',
+        		numberOfMonths:3
+        	});
+        	
+        });
+    </script>
+</head>
+<body>
+	<input type="button" id="open-button" value="일정생성"/>
+	<input/>
+	<hr>
+    <div id="dialog" title="jQuery UI dialog">
+        <h1>Hello jQUery UI .. !</h1>
+        <label for="event-name">일정 이름</label>
+        <input id="event-name" type="text" />
+        <label for="event-date">날짜</label>
+        <input id="event-date" type="text" />
+    </div>
+</body>
+</html>

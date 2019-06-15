@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+// http://localhost:7080/jsexp/a08_ajax/a02_login.html
+	$(document).ready( function(){
+		$("h1").html("login");
+	});
+</script>
+</head>
+<body>
+<!--  submit. 버튼 클릭시,ㅡ
+a02_result.jsp?id=himan&pass=7777
+ -->
+	<h1></h1>
+	<form action="a02_result.jsp">
+	아이디:<input name="id"/><br>
+	패스워드:<input name="pass"/><br>
+	<input type="submit"/>
+	</form>
+</body>	
+</html>

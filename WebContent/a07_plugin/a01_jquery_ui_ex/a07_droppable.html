@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>jQuery UI Basic</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <style>
+        * { margin: 0px; padding: 0px; } 
+        body { font-size: 62.5%; }
+
+        .item {margin: 3px;padding: 5px;}
+        .item > img { width: 100px; height: 100px;}
+
+        #wrap { overflow: hidden; }
+        #wrap > div { float: left; }
+        #dock { position:fixed; min-height: 120px; width: 100%; bottom: 0px; z-index: 1;}
+        #dock > div { float: right; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script>
+        $(document).ready(function () {
+/*         	
+	# 이미지가 mapping div를 설정하고, draggable(), droptable()
+	jquery ui 메서드를 통해서 이동 처리되는 화면 구성을 하고자 한다.
+	1. 이미지 있는 아이콘을 #wrap에 호출 처리..
+	2. #wrap에 있는 아이콘을 draggrable/droppable을 통해서 #dock에 이동 처리..
+	3. #dock에 있는 아이콘을 draggrable/droppable을 통해서 #wrap에 이동 처리..
+ */      
+ 			// 1.아이콘 이미지 #wrap에 할당하기..
+ 			//	1) img html 설정..
+ 			//  2) 상위.append(하위) : 상위요소객체에 하위요소객체를 추가.
+ 			for(var idx=0;idx<21;idx++){
+ 			//  3) div에서 클래스 속성 지정시, widget옵션설정.
+ 				var icon = "<div class='ui-widget-content ui-corner-all item'>"
+ 				icon += "<img src='"+idx+".png'/>";
+ 				icon +="</div>"
+ 				$("#wrap").append(icon);
+ 			}
+ 			// 2. 드래그 플러그인(.draggable())를 적용
+ 			//    #wrap ==> #dock
+ 			// 	1) 복사설정 : helper:"clone"
+ 			//  2) 레이어 우선 순위설정 : zIndex:100
+ 			//  3) 자동스크롤링처리 방지 : scoll:false
+ 			$("#wrap>div").draggable({
+ 				helper:"clone",
+ 				zIndex:100,
+ 				scroll:false
+ 			});
+ 			
+ 			// 3. 드랍터블 플러그인(.droppable())를 적용
+ 			//    #dock 기준에서  #wrap에서 온 요소객체에 대한 설정..
+ 			// 	1) 어떤 요소객체가 들어와도 되는지를 설정  accept:"요소객체"
+ 			//  2) 드랍했을 때, 처리할 이벤트 설정  drop:function(event,ui)
+ 			//     - 매개변수 :이벤트와, 드랍되는 객체를 지정
+ 			//       ui.draggable : 드래그 한 객체 
+ 			//          - 기존 div에서는 사라지고 : fadeout()
+ 			//          - 현재 div에서는 나타나게 처리 : #dock객체에서 .fadeIn()
+ 			$("#dock").droppable({
+ 				accept:"#wrap>div",
+ 				drop:function(event, ui){
+ 					//alert("drop 처리.."+$(ui.draggable).html());
+ 					// fadeOut(function(){   fadeIn() }) : 
+ 					//  한 요소객체가 특정한 영역에서는 사라지고, 특정한 영역에서는 나타나게 처리
+ 					$(ui.draggable).fadeOut(function(){
+ 						// ex) 상위.append(하위) == 하위.appendTo(상위)
+ 						// .fadeIn() 천천히 나타나는 effect
+ 						$(this).appendTo("#dock").fadeIn();
+ 					});	
+ 				}
+ 			});
+ 			// dock에 있는 요소객체를 body에 넣었을 때 처리..
+			$("body").droppable({
+				accept:"#dock>div",
+				drop:function(event, ui){
+					$(ui.draggable).fadeOut(function(){
+						$(this).appendTo("#wrap").fadeIn();
+					});
+				}
+			});
+        });
+       
+    </script>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <div id="dock" class="ui-state-error">
+
+    </div>
+</body>
+</html>

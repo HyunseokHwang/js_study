@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		// a04_jsonLoad.html
+		// 서버에서 가져오는 문자열 json 형식..
+		// [{"속성":"문자열값","속성":숫자데이터}]
+		$("h1").html("json data loading");
+		$("h1").click(function(){
+			var xhr = new XMLHttpRequest();
+			xhr.open("get","z02_jsondata.txt",true);
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status == 200 ){
+					// 문자열로 가져온 json를 객체화 처리 JSON.parse()
+					//alert(xhr.responseText);
+					var p01 = JSON.parse(xhr.responseText);
+					var show = "<h2>이름:"+p01.name+"</h2>";
+					show+="<h2>나이:"+p01.age+"</h2>";
+					show+="<h2>사는곳:"+p01.loc+"</h2>";
+					$("div").html(show);
+				}
+			}
+			xhr.send();
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<div></div>
+</body>	
+</html>
